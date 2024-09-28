@@ -3,9 +3,9 @@ from faker import Faker
 import random
 import string
 from google.cloud import storage
-from google.oauth2 import service_account
+# from google.oauth2 import service_account
 
-credentials = service_account.Credentials.from_service_account_file('/Users/p/Documents/SA/605074532510-compute.json')
+# credentials = service_account.Credentials.from_service_account_file('/Users/p/Documents/SA/605074532510-compute.json')
 
 num_employees = 100
 fake = Faker()
@@ -32,7 +32,8 @@ with open('employee_data.csv', mode='w', newline='') as file:
         })
 
 def upload_to_gcs(bucket_name, source_file_name, destination_blob_name):
-    storage_client = storage.Client(credentials=credentials)
+    # storage_client = storage.Client(credentials=credentials) # local
+    storage_client = storage.Client() # GCP
     bucket = storage_client.bucket(bucket_name)
 
     blob = bucket.blob(destination_blob_name)
