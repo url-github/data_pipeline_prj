@@ -2,7 +2,7 @@
 
 ### API > Python > Airflow > GCS > Cloud Functions > Dataflow > BigQuery > Looker
 
-![Data Pipeline](https://github.com/url-github/data_pipeline_prj/blob/main/ 001_api_cricbuzz_data_pipeline/data_pipeline.png)
+![Data Pipeline](https://github.com/url-github/data_pipeline_prj/blob/main/001_api_cricbuzz_data_pipeline/data_pipeline.png)
 
 * Airflow / Composer - dag_extract_and_push_gcs - First element of the pi
 peline. Runs a script that downloads and loads data to GCS
