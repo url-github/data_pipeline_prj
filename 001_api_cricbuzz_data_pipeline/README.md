@@ -1,6 +1,5 @@
 # 001_api_cricbuzz_data_pipeline
 
-### API > Python > Airflow > GCS > Cloud Functions > Dataflow > BigQuery > Looker
 
 ![Data Pipeline](https://github.com/url-github/data_pipeline_prj/blob/main/001_api_cricbuzz_data_pipeline/data_pipeline.png)
 
