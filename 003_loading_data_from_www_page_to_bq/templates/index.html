@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload File</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #3a3f44;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .container {
+            background-color: white;
+            margin: 40px auto;
+            padding: 30px;
+            width: 50%;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center; /* Wyśrodkowanie zawartości */
+        }
+        h2 {
+            color: #3a3f44;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input[type="file"] {
+            margin-bottom: 15px;
+        }
+        input[type="submit"] {
+            background-color: #3a3f44;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #4CAF50;
+        }
+        .back-button {
+            display: none;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #3a3f44;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Loading data to Looker</h1>
+    </div>
+    <div class="container">
+        <h2>Upload File</h2>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <input type="submit" value="Upload">
+        </form>
+
+
+        <button class="back-button" onclick="location.href='/'">Go Back</button>
+
+        {% if filename %}
+            <h3>File {{ filename }} uploaded successfully!</h3>
+            <script>
+
+                document.querySelector('.back-button').style.display = 'inline-block';
+            </script>
+        {% endif %}
+    </div>
+</body>
+</html>
