@@ -32,7 +32,7 @@ with dag:
     pipeline_name="employee_data",
     instance_name="datapipeline", # Identyfikator instancji Data Fusion
     task_id="datafusion_pipeline",
-    timeout=900 # 15 min
+    # timeout=900 # 15 min
     )
 
     extract_data >> datafusion_pipeline
