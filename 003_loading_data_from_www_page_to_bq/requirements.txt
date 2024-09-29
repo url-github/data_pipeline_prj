@@ -4,7 +4,5 @@ google-cloud-storage # Cloud Functions
 
 Flask # local
 Jinja2  # local
-google-auth  # local
-
 
 # pip install -r requirements.txt
