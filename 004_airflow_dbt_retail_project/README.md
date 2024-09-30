@@ -1,16 +1,8 @@
 # 004_airflow_dbt_retail_project
 
-'''
 mkdir 004_airflow_dbt_retail_project
 cd 004_airflow_dbt_retail_project
 echo "# 004_airflow_dbt_retail_project" >> README.md
-
-python3 -m venv venv && source venv/bin/activate
-'''
-
-'''
-mkdir p
-cd p
 
 python3 -m venv venv && source venv/bin/activate
 
@@ -28,16 +20,11 @@ airflow tasks test retail upload_csv_to_gcs 2024-01-01
 
 # Terminal
 astro dev bash
-'''
 
-'''
 gs://data_stream_gcs # GCS
-'''
 
-'''
 /usr/local/airflow/include/gcp/service_account.json # Keyfile Path
 Google Cloud # Connection Type
 gcp # Connection Id
 
 AIRFLOW__CORE__TEST_CONNECTION=enabled # .env Działający guzik testowania
-'''
