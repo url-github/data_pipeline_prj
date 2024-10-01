@@ -15,6 +15,8 @@ from astro.constants import FileType
 from airflow.providers.google.cloud.transfers.local_to_gcs import LocalFilesystemToGCSOperator # operator do przesyłania plików z lokalnego systemu plików do GCS
 from airflow.providers.google.cloud.operators.bigquery import BigQueryCreateEmptyDatasetOperator
 
+from airflow.models.baseoperator import chain
+
 @dag(
     start_date=datetime(2024, 1, 1),
     schedule=None,
@@ -32,7 +34,7 @@ def retail():
         mime_type='text/csv',
     )
 
-    create_temp_dataset = BigQueryCreateEmptyDatasetOperator(
+    create_retail_dataset = BigQueryCreateEmptyDatasetOperator(
 		task_id='create_retail_dataset',
 		dataset_id='retail',
 		gcp_conn_id='gcp',
@@ -58,8 +60,6 @@ def retail():
         from include.soda.check_function import check
         return check(scan_name, checks_subpath)
 
-    check_load()
-
 
     transform = DbtTaskGroup(
         group_id='transform',
@@ -77,8 +77,6 @@ def retail():
         from include.soda.check_function import check
         return check(scan_name, checks_subpath)
 
-    check_transform()
-
     report = DbtTaskGroup(
         group_id='report',
         project_config=DBT_PROJECT_CONFIG,
@@ -94,5 +92,16 @@ def retail():
     def check_report(scan_name='check_report', checks_subpath='report'):
         from include.soda.check_function import check
         return check(scan_name, checks_subpath)
+
+    chain(
+        upload_csv_to_gcs,
+        create_retail_dataset,
+        gcs_to_raw,
+        check_load(),
+        transform,
+        check_transform(),
+        report,
+        check_report(),
+	)
 
 retail()
