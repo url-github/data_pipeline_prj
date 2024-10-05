@@ -17,6 +17,7 @@ docker compose down
 
 docker compose down && docker compose up -d
 
+# Check tasks
 docker compose ps
 docker exec -it xxx-scheduler-1 /bin/bash
 airflow tasks test dag_name task_name 2024-01-01
