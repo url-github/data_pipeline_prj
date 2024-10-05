@@ -1,5 +1,5 @@
-mkdir 005_twitter_data_pipeline_using_airflow
-cd 005_twitter_data_pipeline_using_airflow
+mkdir 005_x_data_pipeline_using_airflow
+cd 005_x_data_pipeline_using_airflow
 
 python3 -m venv venv && source venv/bin/activate
 
