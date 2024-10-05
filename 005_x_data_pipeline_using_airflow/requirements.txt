@@ -1,0 +1,4 @@
+pandas
+tweepy
+s3fs
+python-dotenv
