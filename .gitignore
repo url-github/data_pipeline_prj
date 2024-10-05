@@ -163,7 +163,7 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-google-cloud-sdk
-.DS_Store
-service_account.json
-configuration.yml
+google-cloud-sdk/
+.DS_Store/
+service_account.json/
+configuration.yml/
