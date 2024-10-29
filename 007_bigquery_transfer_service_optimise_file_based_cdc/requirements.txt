@@ -2,3 +2,4 @@ faker
 pandas
 pyarrow
 google-cloud-storage
+google-oauth2-tool
