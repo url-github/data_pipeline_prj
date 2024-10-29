@@ -25,7 +25,7 @@ credentials = service_account.Credentials.from_service_account_file(credentials_
 storage_client = storage.Client(credentials=credentials)
 
 # Pobranie nazwy głównego bucketu i folderu
-bucket_root, folder_path = bucket_name.split('/', 1)
+bucket_root, folder_path = bucket_name.split('/')
 
 # Tworzenie 50 plików z danymi
 for i in range(10):
