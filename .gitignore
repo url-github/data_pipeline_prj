@@ -166,4 +166,5 @@ cython_debug/
 google-cloud-sdk
 .DS_Store
 service_account.json
+gcs_credentials.json
 configuration.yml
